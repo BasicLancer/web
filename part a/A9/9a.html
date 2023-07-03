@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+               <title>Leap Years</title>
+
+               <script>
+                              function findLeapYears() {
+                                             var startYear = document.getElementById("startYear").value;
+                                             var endYear = document.getElementById("endYear").value;
+                                             var leapYears = [];
+
+                                             for (var i = startYear; i <= endYear; i++) {
+                                                            if (i % 4 === 0 && (i % 100 !== 0 || i % 400 === 0)) {
+                                                                           leapYears.push(i);
+                                                            }
+                                             }
+
+                                             document.getElementById("result").innerHTML = leapYears.join(",");
+                              }
+               </script>
+</head>
+
+<body>
+               <label for="startYear">Enter the start year:</label>
+               <input type="number" id="startYear"><br>
+               <label for="endYear">Enter the end year:</label>
+               <input type="number" id="endYear"><br>
+               <button onclick="findLeapYears()">Find Leap Years</button>
+               <div id="result"></div>
+</body>
+
+</html>

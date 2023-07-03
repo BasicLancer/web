@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+               <title>Jump Search</title>
+</head>
+
+<body>
+               <script>
+                              function jumpSearch(arr, key) {
+                                             const n = arr.length;
+                                             const blockSize = Math.floor(Math.sqrt(n));
+                                             let start = 0;
+                                             let end = blockSize;
+
+                                             while (arr[Math.min(end, n) - 1] < key) {
+                                                            start = end;
+                                                            end += blockSize;
+
+                                                            if (start >= n) {
+                                                                           return -1;
+                                                            }
+                                             }
+
+                                             while (arr[start] < key) {
+                                                            start++;
+
+                                                            if (start === Math.min(end, n)) {
+                                                                           return -1;
+                                                            }
+                                             }
+
+                                             return arr[start] === key ? start : -1;
+
+
+                                             //LINEAR SEARCH
+                                             //             for (var i = 0; i < arr.length; i++) {
+                                             //     if (arr[i] === key) {
+                                             //       return i; // Key found at index i
+                                             //     }
+                                             //   }
+
+                                             //   return -1; }
+
+                                             // 7. BINARY SEARCH
+                                             // var start = 0;
+                                             // var end = arr.length - 1;
+
+                                             // while (start <= end) {
+                                             //                var mid = Math.floor((start + end) / 2);
+
+                                             //                if (arr[mid] === key) {
+                                             //                               return mid; // Key found at index mid
+                                             //                } else if (arr[mid] < key) {
+                                             //                               start = mid + 1;
+                                             //                } else {
+                                             //                               end = mid - 1;
+                                             //                }
+                                             // }
+
+                                             // return -1;
+                              }
+
+                              let numbers = prompt("Enter a list of numbers (comma-separated):").split(",").map(Number);
+                              let key = parseInt(prompt("Enter the key to search for:"));
+                              let result = jumpSearch(numbers, key);
+
+                              alert(result === -1 ? "Element not found." : "Element found at index: " + result);
+               </script>
+</body>
+
+</html>

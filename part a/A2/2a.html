@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Tasks Example</title>
+</head>
+
+<body>
+  <h1>Tasks Example</h1>
+
+  <script>
+    function Task1() {
+      return new Promise((resolve, reject) => {
+        // Simulating an asynchronous task
+        setTimeout(() => {
+          document.write("Task 1 completed.<br>");
+          resolve();
+        }, 2000);
+      });
+    }
+
+    function Task2() {
+      return new Promise((resolve, reject) => {
+        // Simulating an asynchronous task
+        setTimeout(() => {
+          document.write("Task 2 completed.<br>");
+          resolve();
+        }, 1500);
+      });
+    }
+
+    function Task3() {
+      return new Promise((resolve, reject) => {
+        // Simulating an asynchronous task
+        setTimeout(() => {
+          document.write("Task 3 completed.");
+          resolve();
+        }, 1000);
+      });
+    }
+
+    // Handling multiple async tasks using promises
+    Task1()
+      .then(function () {
+        return Task2();
+      })
+      .then(function () {
+        return Task3();
+      })
+  </script>
+</body>
+
+</html>

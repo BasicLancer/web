@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+               <h1>JavaScript HTML Events</h1>
+               <h2 onmouseover="style.color='red'" onmouseout="style.color='black'">Mouse over this text</h2>
+               <button type="button" onclick="hi()">OnClick Button</button>
+               <input onchange="alert(this.value)" placeholder="onChange">
+               <input type="text" onkeydown="onkeyfunction()" placeholder="onKeyDown">
+               <script>
+                              function hi() {
+                                             alert('Hi there!');
+                              }
+
+                              function onkeyfunction() {
+                                             alert("You pressed a key inside the input field");
+                              } 
+               </script>
+</body>
+
+</html>

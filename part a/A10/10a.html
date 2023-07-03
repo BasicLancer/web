@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+               <title>Date Search and Display</title>
+
+
+               <script>
+                              function searchAndDisplayDate() {
+                                             var inputString = document.getElementById("inputString").value;
+                                             var dateRegex = /\d{2}\/\d{2}\/\d{4}/;
+                                             var match = inputString.match(dateRegex);
+
+                                             if (match) {
+                                                            alert("Date found: " + match[0]);
+                                             } else {
+                                                            alert("No date found in the string.");
+                                             }
+                              }
+               </script>
+</head>
+
+<body>
+               <label for="inputString">Enter a string: </label>
+               <input type="text" id="inputString">
+               <button onclick="searchAndDisplayDate()">Search Date</button>
+</body>
+
+</html>
